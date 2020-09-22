@@ -43,7 +43,6 @@ Laravel Passport for API authentication https://github.com/laravel/passport
 POST /api/v1/register HTTP/1.1
 Accept: application/json
 Content-Type: application/json
-Content-Length: xy
 
 {
     "name": "foo",
@@ -59,7 +58,6 @@ Content-Length: xy
 HTTP/1.1 201 Created
 Server: My RESTful API
 Content-Type: application/json
-Content-Length: xy
 
 {
     "data": {
@@ -77,7 +75,6 @@ Content-Length: xy
 HTTP/1.1 400 Bad Request
 Server: RESTful API
 Content-Type: application/json
-Content-Length: xy
 
 {
     "message": "Validation errors",
@@ -101,7 +98,6 @@ Content-Length: xy
 POST /api/v1/login HTTP/1.1
 Accept: application/json
 Content-Type: application/json
-Content-Length: xy
 
 {
     "username": "foo",
@@ -115,7 +111,6 @@ Content-Length: xy
 HTTP/1.1 200 OK
 Server: My RESTful API
 Content-Type: application/json
-Content-Length: xy
 
 {
     "data": {
@@ -132,7 +127,6 @@ Content-Length: xy
 HTTP/1.1 401 Unauthorized
 Server: RESTful API
 Content-Type: application/json
-Content-Length: xy
 
 {
     "error": "Invalid Credentials",
@@ -151,7 +145,6 @@ Content-Length: xy
 POST /api/v1/user/data HTTP/1.1
 Accept: application/json
 Content-Type: application/json
-Content-Length: xy
 
 ```
 
@@ -161,7 +154,6 @@ Content-Length: xy
 HTTP/1.1 200 OK
 Server: RESTful API
 Content-Type: application/json
-Content-Length: xy
 
 {
     "user": {
@@ -182,7 +174,6 @@ Content-Length: xy
 HTTP/1.1 401 Unauthorized
 Server: RESTful API
 Content-Type: application/json
-Content-Length: xy
 
 Unauthorized.
 ```
@@ -198,7 +189,6 @@ Unauthorized.
 POST /api/v1/logout HTTP/1.1
 Accept: application/json
 Content-Type: application/json
-Content-Length: xy
 
 ```
 
@@ -208,7 +198,6 @@ Content-Length: xy
 HTTP/1.1 200 OK
 Server: RESTful API
 Content-Type: application/json
-Content-Length: xy
 
 {
     "message": "Successfully logged out",
@@ -222,7 +211,6 @@ Content-Length: xy
 HTTP/1.1 401 Unauthorized
 Server: RESTful API
 Content-Type: application/json
-Content-Length: xy
 
 Unauthorized.
 ```
@@ -244,11 +232,11 @@ vendor/bin/phpunit --filter=testUserLogin
 ### Get User Data
 
 ```php
-vendor/bin/phpunit --filter=testLogUserOut
+vendor/bin/phpunit --filter=testGetUserData
 ```
 
 ### Log User Out
 
 ```php
-vendor/bin/phpunit --filter=testGetUserData
+vendor/bin/phpunit --filter=testLogUserOut
 ```
