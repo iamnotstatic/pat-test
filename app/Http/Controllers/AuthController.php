@@ -18,19 +18,15 @@ class AuthController extends Controller
      */
     public function register(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $results = $this->validate($request, [
             'name' => 'required|string',
             'email' => 'required|string|email|unique:users',
             'password' => 'required|string|min:8|confirmed',
         ]);
 
-        if($validator->fails()){
-            return response(['message' => 'Validation errors', 'errors' =>  $validator->errors(), 'status' => false], 400);
-        }
-
-        $input = $request->all();
-        $input['password'] = Hash::make($input['password']);
-        $user = User::create($input);
+         
+        $results['password'] = Hash::make($results['password']);
+        $user = User::create($results);
       
         /** User authentication access token is generated here **/
         $token  =  $user->createToken('PatriciaTest')->accessToken;
@@ -55,24 +51,21 @@ class AuthController extends Controller
      */ 
     public function login(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $results = $this->validate($request, [
             'email' => 'required|string|email',
             'password' => 'required|string'
         ]);
-
-        if($validator->fails()){
-            return response(['message' => 'Validation errors', 'errors' =>  $validator->errors(), 'status' => false], 400);
-        }
+        
 
         // Check if user exits
         $user = User::where([
             ['email', '!=', null],
-            ['email', '=', $request->email]
+            ['email', '=', $results['email']],
         ]) ->first();
 
-        if(!empty($user) && Hash::check($request->password, $user->password)){ 
+        if(!empty($user) && Hash::check($results['password'], $user->password)){ 
 
-            $user->last_logged_in = date('Y-m-d H:i:s');
+            $user->last_logged_in = date('Y-m-d h:i:s');
             $user->save();
             
             /** User authentication access token is generated here **/
@@ -102,8 +95,7 @@ class AuthController extends Controller
      */ 
     public function userData()
     {
-        $user = Auth::user(); 
-        return response()->json(['user' => $user, 'success' => true], 200);
+        return response()->json(['user' =>  Auth::user(), 'success' => true], 200);
     } 
     
     
