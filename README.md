@@ -1,5 +1,9 @@
 # API Documentation
 
+<a href="#"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://github.com/iamnotstatic/pat-test/blob/master/reports/index.html">![coverage](https://img.shields.io/badge/coverage-75%25-yellowgreen)</a>
+
+
 This API uses `POST` and `GET` request to communicate and HTTP [response codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) to indenticate status and errors. All responses come in standard JSON. All requests must include a `content-type` of `application/json` and the body must be valid JSON.
 
 ## Package for API Authentication
