@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <title>{{config('swagger-lume.api.title')}}</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ swagger_lume_asset('swagger-ui.css') }}" >
-    <link rel="icon" type="image/png" href="{{ swagger_lume_asset('favicon-32x32.png') }}" sizes="32x32" />
-    <link rel="icon" type="image/png" href="{{ swagger_lume_asset('favicon-16x16.png') }}" sizes="16x16" />
+    <link rel="stylesheet" type="text/css" href="https://patricia-test-example.herokuapp.com/swagger-ui-assets/swagger-ui.css?v=c52137ed98af4906fef37b97df6cdd02" >
+    <link rel="icon" type="image/png" href="https://patricia-test-example.herokuapp.com/swagger-ui-assets/favicon-32x32.png?v=1cc0b0913711c18c661e0cda2db15d2c" sizes="32x32" />
+    <link rel="icon" type="image/png" href="https://patricia-test-example.herokuapp.com/swagger-ui-assets/favicon-16x16.png?v=af600cb007c2b6ccdeb7d8b08a398405" sizes="16x16" />
     <style>
         html
         {
@@ -67,8 +67,8 @@
 
 <div id="swagger-ui"></div>
 
-<script src="{{ swagger_lume_asset('swagger-ui-bundle.js') }}"> </script>
-<script src="{{ swagger_lume_asset('swagger-ui-standalone-preset.js') }}"> </script>
+<script src="https://patricia-test-example.herokuapp.com/swagger-ui-assets/swagger-ui-bundle.js?v=757ec16f5d286375bee53df8da63951b"> </script>
+<script src="https://patricia-test-example.herokuapp.com/swagger-ui-assets/swagger-ui-standalone-preset.js?v=75415fe5d0496048e4c5bc5cfdbc6265"> </script>
 <script>
     window.onload = function() {
         // Build a system
