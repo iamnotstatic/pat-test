@@ -6,6 +6,14 @@ This API uses `POST` and `GET` request to communicate and HTTP [response codes](
 
 Laravel Passport for API authentication https://github.com/laravel/passport
 
+## Documentation URL
+
+https://patricia-test-example.herokuapp.com/api/documentation
+
+## APP URL
+
+https://patricia-test-example.herokuapp.com
+
 ## Response Codes
 
 ### Response Codes
